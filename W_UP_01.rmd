@@ -21,9 +21,11 @@ mydata <- read.csv(file="pushups.csv")
 
 <!--In this section you explain what you are trying to show. Where did the data come from? What is the research or other question you are trying to answer?!-->
 
+Is there a difference in the average number of pushups done by football player on the line vs skill players?
+The data came from Georgetown college football team from Kentucky.
+
 Create an Rstudio project in your shared space on rstudio.cloud.  Using the dataset called pushups from the tigerstats package in R; answer the question posed by this null and alternate hypothesis in an html markdown document.
 
-Is there a difference between the number of pushups that can be done by line vs skill players?
 
 
 $H_0$: There is no difference between the average number of pushups of line vs skill players
@@ -33,6 +35,7 @@ $H_A$: The average number of pushups done by line players is statistically diffe
 # Methods
 
 <!--Decide on your methods: use "variable analysis" or other appropriate descriptors. Make sure to choose at least one graphical method and at least one numerical method.!-->
+
 Pushups is a numerical variable, position is categorical therefore we use numerical-cat file 
 
 # Results
@@ -64,6 +67,12 @@ basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='e
 
 
 ### Numerical Descriptive Results
+
+```{r}
+favstats(pushups~position,data=mydata)
+```
+
+
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
