@@ -90,7 +90,7 @@ This table shows that the average number of pushups for a line player was about 
 t.test(pushups~position,data=mydata)
 ```
 
-The P value is less than .05, so we reject the null hypothesis. This means we conclude that there is a difference between the amount of push ups. 
+The P value is 0.000009421 which is less than .05, so we reject the null hypothesis. This means we conclude that there is a difference between the amount of push ups. 
 
 # Discussion and Conclusion
 
