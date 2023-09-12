@@ -36,13 +36,12 @@ $H_A$: The average number of pushups done by line players is statistically diffe
 
 <!--Decide on your methods: use "variable analysis" or other appropriate descriptors. Make sure to choose at least one graphical method and at least one numerical method.!-->
 
-Pushups is a numerical variable, position is categorical therefore we use numerical-cat file 
+Push ups is a numerical variable, position is categorical therefore we use numerical-cat file 
 
 # Results
 
 <!--Divide this section into two sub-sections: One for your descriptive results and one for your inferential results.!-->
 
-## Descriptive Results
 
 ### Graphical Descriptive Results
 
@@ -51,7 +50,9 @@ Pushups is a numerical variable, position is categorical therefore we use numeri
 ```{r}
 boxplot(pushups~position, data=mydata)
 ```
-The skill players did 
+
+
+This box plot shows us that the skill players did more push ups on average compared to the line players. The skill players did an average of around 50 push ups and the line players did an average of around 17 push ups 
 
 ```{r}
 basicCN <- ggplot(mydata,aes(x=position,y=pushups))
@@ -76,7 +77,7 @@ basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='e
 ```{r}
 favstats(pushups~position,data=mydata)
 ```
-Thus table shows that the average number of pushups for a line player was about 17, while the average for the skill player was about 50.
+This table shows that the average number of pushups for a line player was about 17, while the average for the skill player was about 50.
 
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
@@ -85,9 +86,14 @@ Thus table shows that the average number of pushups for a line player was about 
 
 <!--State hypothesis clearly. Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc. Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+```{r}
+t.test(pushups~position,data=mydata)
+```
+
+The P value is less than .05, so we reject the null hypothesis. This means we conclude that there is a difference between the amount of push ups. 
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here. If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason. Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-The original question was is there a difference in the average number of pushups that skill and line players can do in 2 minutes? There is a difference because the P value tells us so. 
+The original question was is there a difference in the average number of push ups that skill and line players can do in 2 minutes? There is a difference because our data from the box plots and graph show that the skill players do more push ups on average in 2 minutes. We also know this because the P value is less than .05.  
